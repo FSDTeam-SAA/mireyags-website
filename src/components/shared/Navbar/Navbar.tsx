@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-8">
               <Link
                 href="/"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary text-primary" : "border-0"
                   }`}
               >
                 Home
@@ -75,7 +75,7 @@ const Navbar = () => {
 
               <Link
                 href="/products"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/products" ? "border-b-[2px] border-primary text-primary" : "border-0"
                   }`}
               >
                 Products
@@ -83,7 +83,7 @@ const Navbar = () => {
 
               <Link
                 href="/about-us"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/profiles" ? "border-b-[2px] border-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/about-us" ? "border-b-[2px] border-primary text-primary" : "border-0"
                   }`}
               >
                 About Us
@@ -92,7 +92,7 @@ const Navbar = () => {
 
               <Link
                 href="/contact-us"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary text-primary" : "border-0"
                   }`}
               >
                 Contact Us
@@ -100,7 +100,7 @@ const Navbar = () => {
 
               <Link
                 href="/terms-of-service"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-[#131313] font-normal transition-all ease-in-out duration-300 ${pathname === "/terms-of-service" ? "border-b-[2px] border-primary text-primary" : "border-0"
                   }`}
               >
                 Terms of Service

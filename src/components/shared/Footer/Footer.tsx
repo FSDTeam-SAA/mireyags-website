@@ -72,9 +72,9 @@ const Footer = () => {
                   Shopping Cart
                 </li>
               </Link>
-              <Link href="/privacy-policy">
+              <Link href="/terms-of-service">
                 <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary py-2">
-                  Privacy Policy
+                  Terms of Service
                 </li>
               </Link>
             </ul>
