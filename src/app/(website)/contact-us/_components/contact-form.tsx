@@ -20,7 +20,7 @@ import { useMutation } from "@tanstack/react-query"
 import { toast } from "sonner"
 
 const formSchema = z.object({
-  fullName: z
+  name: z
     .string()
     .min(2, { message: "Full name must be at least 2 characters." })
     .max(50, { message: "Full name cannot exceed 50 characters." }),
@@ -45,7 +45,7 @@ const ContactForm = () => {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            fullName: "",
+            name: "",
             phone: "",
             email: "",
             message: "",
@@ -55,7 +55,7 @@ const ContactForm = () => {
 
     const {mutate, isPending} = useMutation({
         mutationKey: ["contact-us"],
-        mutationFn: async (values: {fullName:string, phone:string, message:string, email:string})=>{
+        mutationFn: async (values: {name:string, phone:string, message:string, email:string})=>{
             const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/contact`,{
                 method: "POST",
                 headers: {
@@ -66,7 +66,7 @@ const ContactForm = () => {
             return res.json()
         },
         onSuccess: (data)=>{
-            if(!data?.success){
+            if(!data?.status){
                 toast.error(data?.message || "Something went wrong");
                 return 0;
             }
@@ -86,7 +86,7 @@ const ContactForm = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                         <FormField
                             control={form.control}
-                            name="fullName"
+                            name="name"
                             render={({ field }) => (
                                 <FormItem>
                                     <FormLabel className="text-base font-normal leading-[150%] text-[#2A2A2A]">Full Name *</FormLabel>
