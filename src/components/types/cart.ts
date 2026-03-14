@@ -3,6 +3,7 @@ export interface CartProduct {
   name: string ;
   description: string;
   price: number;
+  size: string[];
   image: string;
   inStock: string | number;
   quantity: number;
@@ -10,7 +11,7 @@ export interface CartProduct {
 }
 
 export interface DeliveryInfo {
-  deliveryType: "home" | "office";
+  type: "home" | "office";
   firstName: string;
   lastName: string;
   phone: string;

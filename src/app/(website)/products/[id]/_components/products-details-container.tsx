@@ -142,6 +142,7 @@ const ProductDetailsContainer = ({ id }: { id: string }) => {
                     price: productData?.price ?? 0,
                     image: productData?.image ?? "",
                     inStock: productData?.stock ?? 0,
+                    size: productData?.size ?? [] ,
                     quantity: 1,
                   })
                 }

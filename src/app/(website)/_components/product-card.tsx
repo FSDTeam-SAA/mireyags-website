@@ -14,6 +14,7 @@ export interface ProductItem {
   name: string;
   description: string;
   price: number;
+  size: string[];
   image: string;
   inStock: string | number;
   detailsHref?: string;
@@ -127,6 +128,7 @@ export default function ProductCard({
                   price: product.price,
                   image: product.image,
                   inStock: product.stock,
+                  size: product?.size,
                   // detailsHref: product.detailsHref,
                   quantity: 1,
                 })
