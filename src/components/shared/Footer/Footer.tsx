@@ -6,13 +6,13 @@ import { Mail, MapPin, Phone } from "lucide-react";
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#1A365D]">
+      <div className="bg-black border-t border-white/10">
         <div className="py-10 md:py-12 lg:py-14 container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-5 md:gap-6 lg:gap-6">
           <div className="md:col-span-3 ">
             {/* Logo */}
             <Link href="/" className="">
               <Image
-                src="/assets/images/logo.png"
+                src="/assets/images/logo.jpeg"
                 alt="logo"
                 width={1000}
                 height={1000}
@@ -124,10 +124,12 @@ const Footer = () => {
         </div>
       </div>
       {/* footer bottom  */}
-      <p className="container text-sm md:text-base font-medium text-center text-[#131313] leading-[120%] py-6 ">
-        Copyright © {new Date().getFullYear()}. Axiom Wellness. All
-        rights reserved.
-      </p>
+      <div className="bg-black border-t border-white/10">
+        <p className="container text-sm md:text-base font-medium text-center text-white/80 leading-[120%] py-6 ">
+          Copyright © {new Date().getFullYear()}. Axiom Wellness. All
+          rights reserved.
+        </p>
+      </div>
     </div>
   );
 };

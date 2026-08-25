@@ -6,7 +6,7 @@ import FeaturedResearchPeptidesSection from './_components/featured-products'
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bg-black min-h-screen">
       <HeroSection/>
       <FeatureHighlightsSection/>
       <FeaturedResearchPeptidesSection/>

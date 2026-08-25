@@ -42,13 +42,13 @@ export default function FeaturedResearchPeptidesSection() {
   console.log(isError, error, isLoading)
 
   return (
-    <section className="w-full bg-[#eaf4f7] py-14 md:py-20">
+    <section className="w-full bg-black py-14 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white md:text-5xl">
             Featured Research Peptides
           </h2>
-          <p className="mt-3 text-sm leading-6 text-slate-500 md:text-base">
+          <p className="mt-3 text-sm leading-6 text-white/70 md:text-base">
             Explore our most popular products
           </p>
         </div>
@@ -75,8 +75,8 @@ export default function FeaturedResearchPeptidesSection() {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious className="-left-4 hidden border-slate-200 bg-white text-slate-700 shadow-sm md:flex" />
-            <CarouselNext className="-right-4 hidden border-slate-200 bg-white text-slate-700 shadow-sm md:flex" />
+            <CarouselPrevious className="-left-4 hidden border-white/20 bg-black text-white hover:bg-white/10 hover:text-white shadow-sm md:flex" />
+            <CarouselNext className="-right-4 hidden border-white/20 bg-black text-white hover:bg-white/10 hover:text-white shadow-sm md:flex" />
           </Carousel>
         </div>
 
