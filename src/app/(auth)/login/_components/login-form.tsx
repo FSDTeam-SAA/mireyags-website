@@ -79,11 +79,11 @@ async function onSubmit(values: z.infer<typeof formSchema>) {
       <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-5 md:p-6">
         <div className="w-full flex items-center justify-center">
           <Link href="/">
-            <Image src="/assets/images/authlogo.jpeg" alt="auth logo" width={500} height={500} className="w-[174px] h-[174px] object-contain" />
+            <Image src="/assets/images/logo.jpeg" alt="auth logo" width={500} height={500} className="w-full h-[56px] object-contain" />
           </Link>
         </div>
 
-        <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-bold text-[#131313] text-center leading-[120%] ">
+        <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-bold text-[#131313] text-center leading-[120%] pt-4">
           Welcome Back!
         </h3>
         <p className="text-base md:text-lg font-normal text-[#787878] leading-[150%] text-center pt-2">
