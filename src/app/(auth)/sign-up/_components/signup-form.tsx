@@ -129,15 +129,15 @@ const { mutate, isPending } = useMutation({
         <div className="flex w-full items-center justify-center ">
           <Link href="/">
             <Image
-              src="/assets/images/authlogo.jpeg"
+              src="/assets/images/logo.jpeg"
               alt="auth logo"
               width={500}
               height={500}
-              className="h-[134px] w-[174px] object-contain"
+              className="w-full h-[56px] object-contain" 
             />
           </Link>
         </div>
-        <p className="text-base md:text-lg font-normal text-[#616161] leading-[150%] text-center pb-1">
+        <p className="text-base md:text-lg font-normal text-[#616161] leading-[150%] text-center pb-1 pt-4">
           Welcome to Wellness Made Clear
         </p>
         <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-bold text-[#131313] text-center leading-[120%] ">

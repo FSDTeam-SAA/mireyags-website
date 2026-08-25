@@ -132,7 +132,7 @@ const Navbar = () => {
             {/* CTA Buttons */}
             <div className="hidden sm:flex items-center gap-6 flex-shrink-0">
                <Link href="/cart" className="relative">
-                <ShoppingCart className="h-8 w-8" />
+                <ShoppingCart className="h-8 w-8 text-white" />
                 {cartCount > 0 && (
                   <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white">
                     {cartCount}
@@ -175,7 +175,7 @@ const Navbar = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="h-[44px] text-base text-primary font-medium leading-[150%] border border-primary py-2 px-5 rounded-[8px]"
+                      className="h-[44px] text-base text-primary hover:text-white font-medium leading-[150%] border border-primary py-2 px-5 rounded-[8px]"
                     >
                       Sign In
                     </Button>
@@ -248,7 +248,7 @@ const Navbar = () => {
 
               <div className="flex items-center justify-between gap-4 pt-2">
                  <Link href="/cart" className="relative">
-                  <ShoppingCart className="h-7 w-7" />
+                  <ShoppingCart className="h-7 w-7 text-white" />
                   {cartCount > 0 && (
                     <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white">
                       {cartCount}
