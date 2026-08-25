@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
@@ -11,14 +11,14 @@ const Footer = () => {
           <div className="md:col-span-3 ">
             {/* Logo */}
             <Link href="/" className="">
-              {/* <Image
-                src="/assets/images/footer_logo.png"
+              <Image
+                src="/assets/images/logo.png"
                 alt="logo"
                 width={1000}
                 height={1000}
-                className="w-auto h-[36px] object-contain"
-              /> */}
-              <h2 className="text-white text-2xl md:text-3xl lg:text-3xl font-extrabold leading-normal">Axiom <span className="font-normal">Wellness</span></h2>
+                className="w-auto h-[56px] object-contain"
+              />
+              {/* <h2 className="text-white text-2xl md:text-3xl lg:text-3xl font-extrabold leading-normal">Axiom <span className="font-normal">Wellness</span></h2> */}
             </Link>
             <p className="max-w-[210px] text-sm md:text-base text-white leading-normal font-normal pt-4">
               Precision wellness elevated living
