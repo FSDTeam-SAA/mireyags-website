@@ -1,24 +1,24 @@
 import React from "react";
 import Link from "next/link";
-// import Image from "next/image";
+import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
   return (
     <div>
-      <div className="bg-[#1A365D]">
+      <div className="bg-black border-t border-white/10">
         <div className="py-10 md:py-12 lg:py-14 container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-10 gap-5 md:gap-6 lg:gap-6">
           <div className="md:col-span-3 ">
             {/* Logo */}
             <Link href="/" className="">
-              {/* <Image
-                src="/assets/images/footer_logo.png"
+              <Image
+                src="/assets/images/logo.jpeg"
                 alt="logo"
                 width={1000}
                 height={1000}
-                className="w-auto h-[36px] object-contain"
-              /> */}
-              <h2 className="text-white text-2xl md:text-3xl lg:text-3xl font-extrabold leading-normal">Axiom <span className="font-normal">Wellness</span></h2>
+                className="w-auto h-[56px] object-contain"
+              />
+              {/* <h2 className="text-white text-2xl md:text-3xl lg:text-3xl font-extrabold leading-normal">Axiom <span className="font-normal">Wellness</span></h2> */}
             </Link>
             <p className="max-w-[210px] text-sm md:text-base text-white leading-normal font-normal pt-4">
               Precision wellness elevated living
@@ -124,10 +124,12 @@ const Footer = () => {
         </div>
       </div>
       {/* footer bottom  */}
-      <p className="container text-sm md:text-base font-medium text-center text-[#131313] leading-[120%] py-6 ">
-        Copyright © {new Date().getFullYear()}. Axiom Wellness. All
-        rights reserved.
-      </p>
+      <div className="bg-black border-t border-white/10">
+        <p className="container text-sm md:text-base font-medium text-center text-white/80 leading-[120%] py-6 ">
+          Copyright © {new Date().getFullYear()}. Axiom Wellness. All
+          rights reserved.
+        </p>
+      </div>
     </div>
   );
 };

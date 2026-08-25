@@ -129,7 +129,7 @@ const { mutate, isPending } = useMutation({
         <div className="flex w-full items-center justify-center ">
           <Link href="/">
             <Image
-              src="/assets/images/authLogo.png"
+              src="/assets/images/authlogo.jpeg"
               alt="auth logo"
               width={500}
               height={500}

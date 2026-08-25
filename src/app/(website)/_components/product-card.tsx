@@ -33,7 +33,7 @@ export default function ProductCard({
   return (
     <Card
       className={cn(
-        "group h-full overflow-hidden border-0 bg-white shadow-none",
+        "group h-full overflow-hidden border border-white/20 bg-black shadow-none",
         compact ? "rounded-none bg-transparent" : "rounded-2xl",
       )}
     >
@@ -41,7 +41,7 @@ export default function ProductCard({
         <div className={cn(compact ? "p-0" : "p-3 pb-0")}>
           <div
             className={cn(
-              "relative overflow-hidden bg-[#f3f3f3]",
+              "relative overflow-hidden bg-black",
               compact
                 ? "h-[160px] rounded-lg sm:h-[180px] lg:h-[190px]"
                 : "h-[190px] rounded-xl sm:h-[210px]",
@@ -64,7 +64,7 @@ export default function ProductCard({
         >
           <h3
             className={cn(
-              "font-semibold text-slate-900",
+              "font-semibold text-white",
               compact
                 ? "text-[20px] leading-tight md:text-[22px]"
                 : "text-xl leading-none md:text-2xl",
@@ -75,7 +75,7 @@ export default function ProductCard({
 
           <p
             className={cn(
-              "line-clamp-2 text-slate-500",
+              "line-clamp-2 text-white/70",
               compact ? "mt-2 text-xs leading-5" : "mt-3 text-sm leading-5",
             )}
           >
@@ -94,7 +94,7 @@ export default function ProductCard({
 
           <div
             className={cn(
-              "font-bold text-slate-900",
+              "font-bold text-white",
               compact
                 ? "mt-2 text-[18px] leading-none"
                 : "mt-3 text-[22px] leading-none",
@@ -112,8 +112,8 @@ export default function ProductCard({
               className={cn(
                 "flex-1 rounded-md text-xs font-medium",
                 compact
-                  ? "h-8 bg-[#d8d8d8] text-[10px] text-slate-700 hover:bg-[#cfcfcf]"
-                  : "h-9 bg-[#d8d8d8] text-slate-700 hover:bg-[#cfcfcf]",
+                  ? "h-8 bg-white/10 text-[10px] text-white hover:bg-white/20"
+                  : "h-9 bg-white/10 text-white hover:bg-white/20",
               )}
             >
               <Link href={`/products/${product?._id}`}>View Details</Link>
