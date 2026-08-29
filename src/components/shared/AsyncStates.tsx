@@ -1,3 +1,5 @@
+"use client"
+
 import { AlertCircle, PackageOpen, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
