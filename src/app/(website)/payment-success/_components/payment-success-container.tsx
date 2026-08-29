@@ -35,29 +35,29 @@ export default function PaymentSuccessContainer() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8FAFC] px-4">
-      <div className="max-w-md w-full bg-white shadow-md rounded-xl p-8 text-center">
+    <div className="min-h-screen flex items-center justify-center bg-black px-4">
+      <div className="w-full max-w-md rounded-[10px] border border-white/20 bg-black p-8 text-center text-white shadow-none">
         <div className="flex justify-center">
-          <CheckCircle className="text-primary" size={70} />
+          <CheckCircle className="text-white" size={70} />
         </div>
 
-        <h1 className="text-2xl md:text-3xl font-bold mt-4 text-[#1E293B]">
+        <h1 className="mt-4 text-2xl font-bold text-white md:text-3xl">
           Payment Successful!
         </h1>
 
-        <p className="text-sm text-[#64748B] mt-2 leading-[150%]">
+        <p className="mt-2 text-sm leading-[150%] text-white/65">
           Thank you! Your payment has been processed successfully.
         </p>
 
-        <div className="mt-6 bg-[#F1F5F9] rounded-lg p-4 text-left">
-          <h3 className="font-medium text-[#0F172A] text-sm">
+        <div className="mt-6 rounded-[10px] border border-white/15 bg-white/5 p-4 text-left">
+          <h3 className="text-sm font-medium text-white">
             Payment Details
           </h3>
 
-          <div className="mt-2 space-y-1 text-[13px] text-[#475569]">
+          <div className="mt-2 space-y-1 text-[13px] text-white/65">
             <p>
               <span className="font-medium">Status :</span>{" "}
-              <span className="text-green-600 font-semibold">Completed</span>
+              <span className="font-semibold text-white">Completed</span>
             </p>
             <p>
               <span className="font-medium">Payment Method :</span> Stripe
@@ -68,7 +68,7 @@ export default function PaymentSuccessContainer() {
         <div className="mt-8 space-y-3">
           <Button
             onClick={handleContinueBrowsing}
-            className="w-full h-[48px] text-sm text-white font-semibold rounded-[12px]"
+            className="h-[48px] w-full rounded-[10px] bg-white text-sm font-semibold text-black hover:bg-white/80"
           >
             Continue Browsing
           </Button>
@@ -76,7 +76,7 @@ export default function PaymentSuccessContainer() {
           <Button
             variant="outline"
             onClick={handleGoProducts}
-            className="w-full h-[48px] text-sm font-semibold rounded-[12px]"
+            className="h-[48px] w-full rounded-[10px] border-white text-sm font-semibold text-white hover:bg-white/10"
           >
             View Products
           </Button>
@@ -187,5 +187,3 @@ export default function PaymentSuccessContainer() {
 //     </div>
 //   );
 // }
-
-

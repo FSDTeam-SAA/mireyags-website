@@ -1,14 +1,14 @@
 export default function TermsOfServicePage() {
   return (
-    <main className="py-10 md:py-16">
+    <main className="bg-black py-10 text-white md:py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="rounded-sm bg-transparent">
           {/* Header */}
           <div className="text-center">
-            <h1 className="text-2xl font-medium text-slate-900 md:text-3xl">
+            <h1 className="text-2xl font-medium text-white md:text-3xl">
               Terms of Service
             </h1>
-            <p className="mx-auto mt-3 max-w-xl text-[11px] leading-5 text-slate-500 md:text-xs">
+            <p className="mx-auto mt-3 max-w-xl text-[11px] leading-5 text-white/60 md:text-xs">
               For website owners and website-related terms, wording assumes this
               website provides products, services, or software governing
               outflow, and digital use licenses.
@@ -16,24 +16,24 @@ export default function TermsOfServicePage() {
           </div>
 
           {/* Content */}
-          <div className="mt-10 space-y-10 text-slate-800">
+          <div className="mt-10 space-y-10 text-white/80">
             {/* Section 1 */}
             <section>
-              <h2 className="text-2xl font-semibold text-slate-900 md:text-[32px]">
+              <h2 className="text-2xl font-semibold text-white md:text-[32px]">
                 1. Introduction
               </h2>
 
-              <p className="mt-5 text-sm font-medium text-slate-500">
+              <p className="mt-5 text-sm font-medium text-white/50">
                 Last updated 02-09-2025
               </p>
 
-              <p className="mt-3 text-sm leading-7 text-slate-700">
+              <p className="mt-3 text-sm leading-7 text-white/70">
                 Our aim is to keep this Agreement as readable as possible, but
                 some cases for legal reasons, some of the language is required
                 “LEGAL”.
               </p>
 
-              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-white/70">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -60,11 +60,11 @@ export default function TermsOfServicePage() {
 
             {/* Section 2 */}
             <section>
-              <h2 className="text-2xl font-semibold text-slate-900 md:text-[32px]">
+              <h2 className="text-2xl font-semibold text-white md:text-[32px]">
                 2. Your Acceptance Of This Agreement
               </h2>
 
-              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-white/70">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -76,7 +76,7 @@ export default function TermsOfServicePage() {
                   mollit anim id est laborum.
                 </p>
 
-                <p className="font-semibold text-slate-800">
+                <p className="font-semibold text-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -99,11 +99,11 @@ export default function TermsOfServicePage() {
 
             {/* Section 3 */}
             <section>
-              <h2 className="text-2xl font-semibold text-slate-900 md:text-[32px]">
+              <h2 className="text-2xl font-semibold text-white md:text-[32px]">
                 3. Use Of Our Services
               </h2>
 
-              <div className="mt-6 space-y-5 text-sm leading-7 text-slate-700">
+              <div className="mt-6 space-y-5 text-sm leading-7 text-white/70">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -124,7 +124,7 @@ export default function TermsOfServicePage() {
                   dolore eu fugiat nulla pariatur.
                 </p>
 
-                <p className="font-semibold text-slate-800">
+                <p className="font-semibold text-white">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco

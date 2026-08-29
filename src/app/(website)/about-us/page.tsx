@@ -6,7 +6,7 @@ import ExpertTeamSection from './_components/expert-team'
 
 const AboutUsPage = () => {
   return (
-    <div>
+    <div className="bg-black text-white">
       <OurMissionSection/>
       <OurCoreValuesSection/>
       <OurQualityProcessSection/>

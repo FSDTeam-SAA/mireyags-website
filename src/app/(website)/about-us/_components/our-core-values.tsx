@@ -38,14 +38,14 @@ const values: ValueItem[] = [
 
 export default function OurCoreValuesSection() {
   return (
-    <section className="w-full bg-white py-14 md:py-20">
+    <section className="w-full bg-black py-14 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-slate-900 md:text-4xl">
+          <h2 className="text-3xl font-bold text-white md:text-4xl">
             Our Core Values
           </h2>
-          <p className="mt-2 text-sm text-slate-500 md:text-base">
+          <p className="mt-2 text-sm text-white/60 md:text-base">
             The principles that guide everything we do
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function OurCoreValuesSection() {
             return (
               <div
                 key={item.id}
-                className="group overflow-hidden rounded-xl border border-[#8ed1ea] bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
+                className="group overflow-hidden rounded-xl border border-white/20 bg-black transition-all duration-300 hover:-translate-y-1 hover:shadow-md"
               >
                 {/* Image */}
                 <div className="p-3 pb-0">
@@ -74,15 +74,15 @@ export default function OurCoreValuesSection() {
 
                 {/* Content */}
                 <div className="flex flex-col items-center px-6 pb-7 pt-5 text-center">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-slate-100">
-                    <Icon className="h-5 w-5 text-slate-700" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full bg-white/10">
+                    <Icon className="h-5 w-5 text-white" />
                   </div>
 
-                  <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                  <h3 className="mt-4 text-lg font-semibold text-white">
                     {item.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-6 text-slate-600">
+                  <p className="mt-2 text-sm leading-6 text-white/70">
                     {item.description}
                   </p>
                 </div>

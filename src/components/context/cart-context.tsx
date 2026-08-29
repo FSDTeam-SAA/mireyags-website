@@ -48,11 +48,15 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [cartItems, isLoaded]);
 
   const addToCart = (product: AddToCartPayload) => {
+    // Keep the notification outside the state updater. React may evaluate a
+    // functional updater more than once in development, but the toast should
+    // only be shown once per user action.
+    const existingProduct = cartItems.some((item) => item.id === product.id);
+
     setCartItems((prev) => {
       const existing = prev.find((item) => item.id === product.id);
 
       if (existing) {
-        toast.success("Quantity updated in cart");
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + (product.quantity ?? 1) }
@@ -60,9 +64,10 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         );
       }
 
-      toast.success("Product added to cart");
       return [...prev, { ...product, quantity: product.quantity ?? 1 }];
     });
+
+    toast.success(existingProduct ? "Quantity updated in cart" : "Product added to cart");
   };
 
   const removeFromCart = (id: number | string) => {

@@ -124,8 +124,8 @@ const { mutate, isPending } = useMutation({
   }
 
   return (
-    <div>
-      <div className="w-full md:w-[570px] rounded-[16px] border-[2px] border-[#E7E7E7] bg-white p-5 md:p-6 shadow-[0px_0px_32px_0px_#0000001F]">
+    <div className="w-full px-3 flex items-center justify-center">
+      <div className="min-w-0 w-full md:w-[570px] rounded-[16px] border-[2px] border-[#E7E7E7] bg-white p-5 md:p-6 shadow-[0px_0px_32px_0px_#0000001F] ">
         <div className="flex w-full items-center justify-center ">
           <Link href="/">
             <Image
@@ -284,9 +284,9 @@ const { mutate, isPending } = useMutation({
 
                   <Label className="text-[#2A2A2A] text-sm font-medium leading-[120%]">
                     I agree to the{" "}
-                    <span className="text-[#8C311E]">
+                    <Link href="/terms-of-service" className="text-[#8C311E]">
                       terms &amp; conditions
-                    </span>
+                    </Link>
                   </Label>
                 </FormItem>
               )}

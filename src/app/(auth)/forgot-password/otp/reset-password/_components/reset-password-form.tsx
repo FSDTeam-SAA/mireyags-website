@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import Image from 'next/image'
+import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 import { Button } from "@/components/ui/button";
 import {
@@ -39,15 +39,14 @@ const formSchema = z
     message: "Passwords do not match.",
   });
 
-
 const ResetPasswordForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [confirmShowPassword, setConfirmShowPassword] = useState(false);
   const searchParams = useSearchParams();
   const email = searchParams.get("email");
-  const decodedEmail = decodeURIComponent(email || "")
+  const decodedEmail = decodeURIComponent(email || "");
   const router = useRouter();
- 
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -57,127 +56,148 @@ const ResetPasswordForm = () => {
     },
   });
 
-
-  const {mutate, isPending} = useMutation({
+  const { mutate, isPending } = useMutation({
     mutationKey: ["reset-password"],
-    mutationFn : async (values: {email:string, newPassword:string})=>{
-      const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/reset-password`,{
-        method: "POST",
-        headers: {
-          "Content-Type" : "application/json"
+    mutationFn: async (values: { email: string; newPassword: string }) => {
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/reset-password`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
         },
-        body : JSON.stringify(values)
-      })
+      );
       return res.json();
     },
-    onSuccess: (data)=>{
-      if(!data?.status){
+    onSuccess: (data) => {
+      if (!data?.status) {
         toast.error(data?.message || "Something went wrong");
-        return
-      }else{
+        return;
+      } else {
         toast.success(data?.message || "Password reset successfully");
-        router.push("/login")
+        router.push("/login");
       }
-    }
-  })
+    },
+  });
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    const payload ={
+    const payload = {
       email: decodedEmail,
-      newPassword: values?.password
-    }
-    mutate(payload)
+      newPassword: values?.password,
+    };
+    mutate(payload);
   }
   return (
-    <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-5 md:p-6">
-      <div className="w-full flex items-center justify-center pb-6">
-        <Link href="/">
-          <Image src="/assets/images/logo.jpeg" alt="auth logo" width={500} height={500} className="w-full h-[56px] object-contain"  />
-        </Link>
-      </div>
+    <div className="w-full px-3 flex items-center justify-center">
+      <div className="min-w-0 w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-5 md:p-6">
+        <div className="w-full flex items-center justify-center pb-6">
+          <Link href="/">
+            <Image
+              src="/assets/images/logo.jpeg"
+              alt="auth logo"
+              width={500}
+              height={500}
+              className="w-full h-[56px] object-contain"
+            />
+          </Link>
+        </div>
 
-      <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-bold text-[#131313] text-center leading-[120%] pt-4">
-        New Password
-      </h3>
-      <p className="text-base md:text-lg font-normal text-[#787878] leading-[150%] text-center pt-2">
-        Please create your new password
-      </p>
+        <h3 className="text-2xl md:text-[32px] lg:text-[40px] font-bold text-[#131313] text-center leading-[120%] pt-4">
+          New Password
+        </h3>
+        <p className="text-base md:text-lg font-normal text-[#787878] leading-[150%] text-center pt-2">
+          Please create your new password
+        </p>
 
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-4 pt-5 md:pt- lg:pt-8"
-        >
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(onSubmit)}
+            className="space-y-4 pt-5 md:pt- lg:pt-8"
+          >
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-base font-semibold text-[#2A2A2A] leading-[120%]">
+                    Password <sup className="text-[#8C311E]">*</sup>
+                  </FormLabel>
+                  <FormControl>
+                    <div className="relative">
+                      <Input
+                        type={showPassword ? "text" : "password"}
+                        className="h-[48px] bg-[#EAEAEA] !rounded-[8px] text-base font-medium text-[#131313] py-3 px-4 border-none placeholder:text-[#787878]"
+                        placeholder="Enter password..."
+                        {...field}
+                      />
+                      <button
+                        type="button"
+                        className="absolute top-3.5 right-4"
+                      >
+                        {showPassword ? (
+                          <Eye
+                            className="text-[#787878]"
+                            onClick={() => setShowPassword(!showPassword)}
+                          />
+                        ) : (
+                          <EyeOff
+                            className="text-[#787878]"
+                            onClick={() => setShowPassword(!showPassword)}
+                          />
+                        )}
+                      </button>
+                    </div>
+                  </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="confirmPassword"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-base font-semibold text-[#2A2A2A] leading-[120%]">
+                    Confirm Password <sup className="text-[#8C311E]">*</sup>
+                  </FormLabel>
+                  <FormControl>
+                    <div className="relative">
+                      <Input
+                        type={confirmShowPassword ? "text" : "password"}
+                        className="h-[48px] bg-[#EAEAEA] !rounded-[8px] text-base font-medium text-[#131313] py-3 px-4 border-none placeholder:text-[#787878]"
+                        placeholder="Enter password..."
+                        {...field}
+                      />
+                      <button
+                        type="button"
+                        className="absolute top-3.5 right-4"
+                      >
+                        {confirmShowPassword ? (
+                          <Eye
+                            className="text-[#787878]"
+                            onClick={() =>
+                              setConfirmShowPassword(!confirmShowPassword)
+                            }
+                          />
+                        ) : (
+                          <EyeOff
+                            className="text-[#787878]"
+                            onClick={() =>
+                              setConfirmShowPassword(!confirmShowPassword)
+                            }
+                          />
+                        )}
+                      </button>
+                    </div>
+                  </FormControl>
+                  <FormMessage className="text-red-500" />
+                </FormItem>
+              )}
+            />
 
-
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-base font-semibold text-[#2A2A2A] leading-[120%]">Password <sup className="text-[#8C311E]">*</sup></FormLabel>
-                <FormControl>
-                  <div className="relative">
-                    <Input
-                      type={showPassword ? "text" : "password"}
-                      className="h-[48px] bg-[#EAEAEA] !rounded-[8px] text-base font-medium text-[#131313] py-3 px-4 border-none placeholder:text-[#787878]"
-                      placeholder="Enter password..."
-                      {...field}
-                    />
-                    <button
-                      type="button"
-                      className="absolute top-3.5 right-4"
-                    >
-                      {showPassword ? (
-                        <Eye className="text-[#787878]" onClick={() => setShowPassword(!showPassword)} />
-                      ) : (
-                        <EyeOff
-                        className="text-[#787878]"
-                          onClick={() => setShowPassword(!showPassword)}
-                        />
-                      )}
-                    </button>
-                  </div>
-                </FormControl>
-                <FormMessage className="text-red-500" />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="confirmPassword"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-base font-semibold text-[#2A2A2A] leading-[120%]">Confirm Password <sup className="text-[#8C311E]">*</sup></FormLabel>
-                <FormControl>
-                  <div className="relative">
-                    <Input
-                      type={confirmShowPassword ? "text" : "password"}
-                       className="h-[48px] bg-[#EAEAEA] !rounded-[8px] text-base font-medium text-[#131313] py-3 px-4 border-none placeholder:text-[#787878]"
-                      placeholder="Enter password..."
-                      {...field}
-                    />
-                    <button
-                      type="button"
-                      className="absolute top-3.5 right-4"
-                    >
-                      {confirmShowPassword ? (
-                        <Eye className="text-[#787878]" onClick={() => setConfirmShowPassword(!confirmShowPassword)} />
-                      ) : (
-                        <EyeOff
-                        className="text-[#787878]"
-                          onClick={() => setConfirmShowPassword(!confirmShowPassword)}
-                        />
-                      )}
-                    </button>
-                  </div>
-                </FormControl>
-                <FormMessage className="text-red-500" />
-              </FormItem>
-            )}
-          />
-
-          {/* <FormField
+            {/* <FormField
             control={form.control}
             name="rememberMe"
             render={({ field }) => (
@@ -203,21 +223,21 @@ const ResetPasswordForm = () => {
             )}
           /> */}
 
-
-          <div className="pt-2">
-            <Button
-              disabled={isPending}
-              className={`text-base font-medium text-white cursor-pointer leading-[120%] rounded-[8px] py-4 w-full h-[51px] ${isPending ? "opacity-50 cursor-not-allowed" : "bg-primary"
+            <div className="pt-2">
+              <Button
+                disabled={isPending}
+                className={`text-base font-medium text-white cursor-pointer leading-[120%] rounded-[8px] py-4 w-full h-[51px] ${
+                  isPending ? "opacity-50 cursor-not-allowed" : "bg-primary"
                 }`}
-              type="submit"
-            >
-              {isPending ? "Loading..." : "Continue"}
-            </Button>
-          </div>
-        </form>
-      </Form>
+                type="submit"
+              >
+                {isPending ? "Loading..." : "Continue"}
+              </Button>
+            </div>
+          </form>
+        </Form>
+      </div>
     </div>
-
   );
 };
 

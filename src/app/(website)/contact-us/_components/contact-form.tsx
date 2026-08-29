@@ -91,7 +91,7 @@ const ContactForm = () => {
                                 <FormItem>
                                     <FormLabel className="text-base font-normal leading-[150%] text-[#2A2A2A]">Full Name *</FormLabel>
                                     <FormControl>
-                                        <Input className="h-[45px] rounded-[8px] border border-[#5A5A5A] py-3 px-4 placeholder:text-[#929292] outline-none ring-0" placeholder="Enter your full name" {...field} />
+                                        <Input className="h-[45px] rounded-[10px] border border-black/50 bg-white px-4 py-3 text-black placeholder:text-black/45 outline-none ring-0 focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/15" placeholder="Enter your full name" {...field} />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
                                 </FormItem>
@@ -104,7 +104,7 @@ const ContactForm = () => {
                                 <FormItem>
                                     <FormLabel className="text-base font-normal leading-[150%] text-[#2A2A2A]">Phone Number *</FormLabel>
                                     <FormControl>
-                                        <Input className="h-[45px] rounded-[8px] border border-[#5A5A5A] py-3 px-4 placeholder:text-[#929292] outline-none ring-0" placeholder="Enter your phone number" {...field} />
+                                        <Input className="h-[45px] rounded-[10px] border border-black/50 bg-white px-4 py-3 text-black placeholder:text-black/45 outline-none ring-0 focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/15" placeholder="Enter your phone number" {...field} />
                                     </FormControl>
                                     <FormMessage className="text-red-500" />
                                 </FormItem>
@@ -119,7 +119,7 @@ const ContactForm = () => {
                             <FormItem>
                                 <FormLabel className="text-base font-normal leading-[150%] text-[#2A2A2A]">Email Address *</FormLabel>
                                 <FormControl>
-                                    <Input className="h-[45px] rounded-[8px] border border-[#5A5A5A] py-3 px-4 placeholder:text-[#929292] outline-none ring-0" placeholder="Enter your Email Address" {...field} />
+                                    <Input className="h-[45px] rounded-[10px] border border-black/50 bg-white px-4 py-3 text-black placeholder:text-black/45 outline-none ring-0 focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/15" placeholder="Enter your Email Address" {...field} />
                                 </FormControl>
                                 <FormMessage className="text-red-500" />
                             </FormItem>
@@ -132,7 +132,7 @@ const ContactForm = () => {
                             <FormItem>
                                 <FormLabel className="text-base font-normal leading-[150%] text-[#2A2A2A]">Message *</FormLabel>
                                 <FormControl>
-                                    <Textarea className="h-[121px] rounded-[8px] border border-[#5A5A5A] py-3 px-4 placeholder:text-[#929292] outline-none ring-0" placeholder="Tell us how we can help you" {...field} />
+                                    <Textarea className="h-[121px] rounded-[10px] border border-black/50 bg-white px-4 py-3 text-black placeholder:text-black/45 outline-none ring-0 focus-visible:border-black focus-visible:ring-2 focus-visible:ring-black/15" placeholder="Tell us how we can help you" {...field} />
                                 </FormControl>
                                 <FormMessage className="text-red-500" />
                             </FormItem>

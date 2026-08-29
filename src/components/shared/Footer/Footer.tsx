@@ -31,22 +31,22 @@ const Footer = () => {
             </h4>
             <ul>
               <Link href="/">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70">
                   Home
                 </li>
               </Link>
               <Link href="/products">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary py-2">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70 py-2">
                   Products
                 </li>
               </Link>
               <Link href="/about-us">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70">
                   About Us
                 </li>
               </Link>
               <Link href="/contact-us">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary py-2">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70 py-2">
                   Contact Us
                 </li>
               </Link>
@@ -58,22 +58,22 @@ const Footer = () => {
             </h4>
             <ul>
               <Link href="/login">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70">
                   Login
                 </li>
               </Link>
               <Link href="/sign-up">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary py-2">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70 py-2">
                   Sign UP
                 </li>
               </Link>
               <Link href="/cart">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70">
                   Shopping Cart
                 </li>
               </Link>
               <Link href="/terms-of-service">
-                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-primary py-2">
+                <li className="text-sm md:text-base font-normal text-white leading-[120%] hover:underline hover:text-white/70 py-2">
                   Terms of Service
                 </li>
               </Link>

@@ -71,7 +71,7 @@ const MireyagsPagination: React.FC<PaginationProps> = ({
               } else handlePageClick(currentPage - 1)
             }}
             className={cn(
-              'border border-primary hover:bg-primary cursor-pointer  hover:text-white rounded-[4px]',
+              'border border-white/40 text-white hover:bg-white hover:text-black cursor-pointer rounded-[4px]',
               currentPage === 1 &&
                 'cursor-not-allowed bg-[#E3E3E3] border-0  pointer-events-none'
             )}
@@ -87,10 +87,10 @@ const MireyagsPagination: React.FC<PaginationProps> = ({
             <PaginationLink
               onClick={() => handlePageClick(page)}
               className={cn(
-                'border cursor-pointer border-primary  hover:text-white rounded-[4px]',
+                'border cursor-pointer border-white/40 text-white hover:bg-white hover:text-black rounded-[4px]',
                 page === currentPage
-                  ? 'bg-primary text-white hover:bg-primary hover:text-white'
-                  : 'hover:bg-primary hover:text-white'
+                  ? 'bg-white text-black hover:bg-white hover:text-black'
+                  : 'hover:bg-white hover:text-black'
               )}
             >
               {page === '...' ? '...' : page}
@@ -108,12 +108,12 @@ const MireyagsPagination: React.FC<PaginationProps> = ({
               }
             }}
             className={cn(
-              'border border-primary hover:bg-primary cursor-pointer  hover:text-white rounded-[4px]',
+              'border border-white/40 text-white hover:bg-white hover:text-black cursor-pointer rounded-[4px]',
               currentPage === totalPages &&
                 'cursor-not-allowed bg-[#E3E3E3] border-0  pointer-events-none'
             )}
           >
-            <ChevronRight className="h-4 w-4 text-black" />
+            <ChevronRight className="h-4 w-4" />
           </PaginationLink>
         </PaginationItem>
       </PaginationContent>

@@ -44,7 +44,7 @@ export default function CommittedToScientific() {
               <Button
                 asChild
                 size="lg"
-                className="h-12 rounded-xl bg-sky-500 px-6 text-base font-semibold text-white shadow-sm hover:bg-sky-600"
+                className="h-12 rounded-xl bg-white px-6 text-base font-semibold text-black shadow-sm hover:bg-white/80"
               >
                 <Link href="/about-us" className="inline-flex items-center gap-2">
                   Learn More About Us
