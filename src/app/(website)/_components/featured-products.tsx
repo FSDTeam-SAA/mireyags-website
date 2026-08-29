@@ -16,6 +16,7 @@ import {
 import ProductCard from "./product-card";
 import { useQuery } from "@tanstack/react-query";
 import { AllProductsApiResponse } from "@/components/types/products-data-type";
+import { ProductGridSkeleton, QueryError } from "@/components/shared/AsyncStates";
 
 
 export default function FeaturedResearchPeptidesSection() {
@@ -28,7 +29,7 @@ export default function FeaturedResearchPeptidesSection() {
   );
 
 
-  const {data, isLoading, error, isError} = useQuery<AllProductsApiResponse>({
+  const {data, isLoading, error, isError, refetch} = useQuery<AllProductsApiResponse>({
     queryKey: ["all-products"],
     queryFn: async ()=>{
       const res = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/product/get-all-products`)
@@ -54,6 +55,7 @@ export default function FeaturedResearchPeptidesSection() {
         </div>
 
         <div className="relative mt-10">
+          {isLoading ? <ProductGridSkeleton count={4} /> : isError ? <QueryError message="Featured products couldn't be loaded." onRetry={() => refetch()} /> : (
           <Carousel
             plugins={[plugin.current]}
             opts={{
@@ -75,22 +77,29 @@ export default function FeaturedResearchPeptidesSection() {
               ))}
             </CarouselContent>
 
-            <CarouselPrevious className="-left-4 hidden border-white/20 bg-black text-white hover:bg-white/10 hover:text-white shadow-sm md:flex" />
-            <CarouselNext className="-right-4 hidden border-white/20 bg-black text-white hover:bg-white/10 hover:text-white shadow-sm md:flex" />
+            {products?.data && products.data.length > 4 && (
+              <>
+                <CarouselPrevious className="-left-4 hidden border-white/20 bg-black text-white shadow-sm hover:bg-white hover:text-black md:flex" />
+                <CarouselNext className="-right-4 hidden border-white/20 bg-black text-white shadow-sm hover:bg-white hover:text-black md:flex" />
+              </>
+            )}
           </Carousel>
+          )}
         </div>
 
-        <div className="mt-10 flex justify-center">
-          <Button
-            asChild
-            className="h-12 rounded-lg bg-sky-500 px-7 text-base font-semibold text-white hover:bg-sky-600"
-          >
-            <Link href="/products" className="inline-flex items-center gap-2">
-              See All Products
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
+        {products?.data && products.data.length > 4 && (
+          <div className="mt-10 flex justify-center">
+            <Button
+              asChild
+              className="h-12 rounded-lg bg-white px-7 text-base font-semibold text-black hover:bg-white/80"
+            >
+              <Link href="/products" className="inline-flex items-center gap-2">
+                See All Products
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );

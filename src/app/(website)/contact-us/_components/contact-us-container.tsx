@@ -4,11 +4,11 @@ import ContactForm from './contact-form'
 
 const ContactInformation = () => {
     return (
-        <div className='bg-[#F6FBFF]'>
+        <div className='bg-black text-white'>
 
-            <div className='bg-[#EDFBFF] py-10 md:py-14 lg:py-20'>
-                <h3 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-[#131313] leading-normal text-center'>Contact Us</h3>
-                <p className='w-full md:w-1/2 mx-auto text-sm md:text-base text-[#616161] font-normal leading-normal text-center pt-4'>From everyday essentials to the latest trends, we bring you a seamless shopping experience with unbeatable deals, delivery.discover convenience, quality, and style all in one place.</p>
+            <div className='bg-black py-10 md:py-14 lg:py-20'>
+                <h3 className='text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-normal text-center'>Contact Us</h3>
+                <p className='w-full md:w-1/2 mx-auto text-sm md:text-base text-white/60 font-normal leading-normal text-center pt-4'>From everyday essentials to the latest trends, we bring you a seamless shopping experience with unbeatable deals, delivery.discover convenience, quality, and style all in one place.</p>
             </div>
             <div className='container grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 py-10 md:py-14 lg:py-20 '>
                 <div className='md:col-span-1 h-full w-full flex flex-col justify-start '>
@@ -18,8 +18,8 @@ const ContactInformation = () => {
                                 <span className='bg-white p-4 rounded-full inline-flex justify-center items-center'><Mail className='text-primary'/></span>
                             </div>
                             <div>
-                                <h4 className='text-base lg:text-lg font-normal leading-[120%] text-[#131313]'>Email Address</h4>
-                                <p className='text-sm lg:text-base leading-[150%] text-[#616161] font-normal'>axlomwellnessco@gmail.com</p>
+                                <h4 className='text-base lg:text-lg font-normal leading-[120%] text-white'>Email Address</h4>
+                                <p className='text-sm lg:text-base leading-[150%] text-white/60 font-normal'>axlomwellnessco@gmail.com</p>
                             </div>
                         </div>
                         <div className='flex items-center  gap-2'>
@@ -27,8 +27,8 @@ const ContactInformation = () => {
                                 <span className='bg-white p-4 rounded-full inline-flex justify-center items-center'><Phone className='text-primary'/></span>
                             </div>
                             <div>
-                                <h4 className='text-base lg:text-lg font-normal leading-[120%] text-[#131313]'>Phone Number</h4>
-                                <p className='text-sm lg:text-base leading-[150%] text-[#616161] font-normal'>+1954 549 6906</p>
+                                <h4 className='text-base lg:text-lg font-normal leading-[120%] text-white'>Phone Number</h4>
+                                <p className='text-sm lg:text-base leading-[150%] text-white/60 font-normal'>+1954 549 6906</p>
                             </div>
                         </div>
                     </div>

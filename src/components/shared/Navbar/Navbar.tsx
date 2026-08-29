@@ -88,7 +88,7 @@ const Navbar = () => {
             <div className="hidden md:flex items-center gap-8">
               <Link
                 href="/"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary text-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-white text-white" : "border-0"
                   }`}
               >
                 Home
@@ -96,7 +96,7 @@ const Navbar = () => {
 
               <Link
                 href="/products"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/products" ? "border-b-[2px] border-primary text-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/products" ? "border-b-[2px] border-white text-white" : "border-0"
                   }`}
               >
                 Products
@@ -104,7 +104,7 @@ const Navbar = () => {
 
               <Link
                 href="/about-us"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/about-us" ? "border-b-[2px] border-primary text-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/about-us" ? "border-b-[2px] border-white text-white" : "border-0"
                   }`}
               >
                 About Us
@@ -113,7 +113,7 @@ const Navbar = () => {
 
               <Link
                 href="/contact-us"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-primary text-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/contact-us" ? "border-b-[2px] border-white text-white" : "border-0"
                   }`}
               >
                 Contact Us
@@ -121,7 +121,7 @@ const Navbar = () => {
 
               <Link
                 href="/terms-of-service"
-                className={`text-sm md:text-[15px] hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/terms-of-service" ? "border-b-[2px] border-primary text-primary" : "border-0"
+                className={`text-sm md:text-[15px] hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/terms-of-service" ? "border-b-[2px] border-white text-white" : "border-0"
                   }`}
               >
                 Terms of Service
@@ -134,7 +134,7 @@ const Navbar = () => {
                <Link href="/cart" className="relative">
                 <ShoppingCart className="h-8 w-8 text-white" />
                 {cartCount > 0 && (
-                  <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white">
+                  <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1 text-[10px] font-bold text-black">
                     {cartCount}
                   </span>
                 )}
@@ -152,12 +152,12 @@ const Navbar = () => {
                   </DropdownMenuTrigger>
                   <DropdownMenuContent className="p-2 border border-white/20 bg-black">
                     <Link href="/personal-information">
-                      <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-primary">
+                      <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-white/70">
                         Personal Infomation
                       </DropdownMenuLabel>
                     </Link>
                     <Link href="/orders">
-                      <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-primary">
+                      <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-white/70">
                         Orders
                       </DropdownMenuLabel>
                     </Link>
@@ -175,7 +175,7 @@ const Navbar = () => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      className="h-[44px] text-base text-primary hover:text-white font-medium leading-[150%] border border-primary py-2 px-5 rounded-[8px]"
+                      className="h-[44px] text-base text-white hover:bg-white hover:text-black font-medium leading-[150%] border border-white py-2 px-5 rounded-[8px]"
                     >
                       Sign In
                     </Button>
@@ -183,7 +183,7 @@ const Navbar = () => {
                   <Link href="/sign-up">
                     <Button
                       size="sm"
-                      className="h-[44px] py-2 px-5 rounded-[8px] bg-primary hover:bg-primary/90 text-white text-base font-normal leading-[150%] "
+                      className="h-[44px] py-2 px-5 rounded-[8px] bg-white hover:bg-white/80 text-black text-base font-normal leading-[150%] "
                     >
                       Register
                     </Button>
@@ -208,7 +208,7 @@ const Navbar = () => {
 
               <Link
                 href="/"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-primary" : "border-0"
+                className={`w-fit text-sm md:text-base hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/" ? "border-b-[2px] border-white" : "border-0"
                   }`}
               >
                 Home
@@ -216,14 +216,14 @@ const Navbar = () => {
 
               <Link
                 href="/products"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/services" ? "border-b-[2px] border-primary" : "border-0"
+                className={`w-fit text-sm md:text-base hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/services" ? "border-b-[2px] border-white" : "border-0"
                   }`}
               >
                 Products
               </Link>
               <Link
                 href="/about-us"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/profiles" ? "border-b-[2px] border-primary" : "border-0"
+                className={`w-fit text-sm md:text-base hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/profiles" ? "border-b-[2px] border-white" : "border-0"
                   }`}
               >
                 About Us
@@ -231,7 +231,7 @@ const Navbar = () => {
 
               <Link
                 href="/contact-us"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/analytic-soccer-coming-soon" ? "border-b-[2px] border-primary" : "border-0"
+                className={`w-fit text-sm md:text-base hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/analytic-soccer-coming-soon" ? "border-b-[2px] border-white" : "border-0"
                   }`}
               >
                 Contact Us
@@ -239,7 +239,7 @@ const Navbar = () => {
 
               <Link
                 href="/terms-of-service"
-                className={`w-fit text-sm md:text-base hover:text-primary leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-primary" : "border-0"
+                className={`w-fit text-sm md:text-base hover:text-white/70 leading-[150%] text-white font-normal transition-all ease-in-out duration-300 ${pathname === "/prices" ? "border-b-[2px] border-white" : "border-0"
                   }`}
               >
                 Terms of Service
@@ -250,7 +250,7 @@ const Navbar = () => {
                  <Link href="/cart" className="relative">
                   <ShoppingCart className="h-7 w-7 text-white" />
                   {cartCount > 0 && (
-                    <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-primary px-1 text-[10px] font-bold text-white">
+                    <span className="absolute -right-2 -top-2 flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1 text-[10px] font-bold text-black">
                       {cartCount}
                     </span>
                   )}
@@ -278,7 +278,7 @@ const Navbar = () => {
                           setMobileDropdownOpen(false)
                         }}
                       >
-                        <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-primary">
+                        <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-white/70">
                           Personal Information
                         </DropdownMenuLabel>
                       </Link>
@@ -289,7 +289,7 @@ const Navbar = () => {
                           setMobileDropdownOpen(false)
                         }}
                       >
-                        <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-primary">
+                        <DropdownMenuLabel className="cursor-pointer text-base md:text-lg text-white leading-[120%] font-medium hover:text-white/70">
                           Orders
                         </DropdownMenuLabel>
                       </Link>
@@ -315,7 +315,7 @@ const Navbar = () => {
                     <Link href="/sign-up">
                       <Button
                         size="sm"
-                        className="h-[40px] py-2 px-9 rounded-full bg-primary hover:bg-primary/90 text-white text-base font-normal leading-[150%] "
+                        className="h-[40px] py-2 px-9 rounded-full bg-white hover:bg-white/80 text-black text-base font-normal leading-[150%] "
                       >
                         Register
                       </Button>

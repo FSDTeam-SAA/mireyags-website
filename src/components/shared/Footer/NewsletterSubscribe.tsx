@@ -70,13 +70,13 @@ export default function NewsletterSubscribe() {
             onChange={(e) => setEmail(e.target.value)}
             required
             disabled={isPending}
-            className="h-10 border-y border-l border-primary rounded-l-[8px] focus:outline-none ring-0 placeholder:text-[#616161] text-[#131313]"
+            className="h-10 border-y border-l border-white/40 rounded-l-[8px] bg-white text-black focus:outline-none ring-0 placeholder:text-black/50"
           />
 
           <Button
             type="submit"
             disabled={isPending}
-            className="h-10 bg-primary text-white font-bold leading-[120%] rounded-r-[8px]"
+            className="h-10 bg-white text-black font-bold leading-[120%] rounded-r-[8px] hover:bg-white/80"
           >
             {isPending ? "Subscribing..." : "Subscribe"}
           </Button>

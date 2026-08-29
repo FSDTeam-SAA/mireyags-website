@@ -146,14 +146,14 @@ const PersonalInformationForm = () => {
   }
 
   return (
-    <div className="h-full py-6 px-8 bg-white rounded-[8px] shadow-[0_4px_8px_rgba(0,0,0,0.12)]">
+    <div className="h-full rounded-[10px] bg-white px-4 py-5 shadow-[0_4px_8px_rgba(0,0,0,0.12)] sm:px-6 md:px-8 md:py-6">
       <div>
         <h4 className="text-xl md:text-2xl text-[#343A40] leading-[120%] font-semibold">
           Personal Information
         </h4>
       </div>
       {/* form  */}
-      <div className="pt-8">
+      <div className="pt-6 md:pt-8">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -273,7 +273,7 @@ const PersonalInformationForm = () => {
                 )}
               />
             </div>
-            <div className="w-full flex items-center justify-center pt-5">
+            <div className="flex w-full items-center justify-center pt-5">
               {/* <Button
                 type="button"
                 variant="outline"
@@ -285,7 +285,7 @@ const PersonalInformationForm = () => {
 
               <Button
                 disabled={isPending}
-                className="h-[47px] text-base text-[#F8F9FA] leading-[120%] font-medium py-4 px-20 rounded-[6px]"
+                className="h-[47px] w-full max-w-xs px-6 py-4 text-base font-medium leading-[120%] text-[#F8F9FA] sm:w-auto sm:px-20"
                 type="submit"
               >
                 {isPending ? "Updating..." : "Save"}

@@ -148,8 +148,8 @@ export default function OtpForm() {
   };
 
   return (
-    <div className="">
-      <div className="w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-5 md:p-6">
+    <div className="w-full px-3 flex items-center justify-center">
+      <div className="min-w-0 w-full md:w-[570px] bg-white rounded-[16px] border-[2px] border-[#E7E7E7] shadow-[0px_0px_32px_0px_#0000001F] p-5 md:p-6">
         <div className="w-full flex items-center justify-center pb-6">
           <Link href="/">
           <Image src="/assets/images/logo.jpeg" alt="auth logo" width={500} height={500} className="w-full h-[56px] object-contain" />
@@ -202,7 +202,7 @@ export default function OtpForm() {
         <button
           onClick={handleVerify}
           type="submit"
-          className="w-full h-[52px] bg-primary rounded-[8px] py-[15px] px-[151px] text-lg font-semibold  leading-[120%] tracking-[0%] text-[#F4F4F4]"
+          className="h-[52px] w-full rounded-[10px] bg-primary px-4 py-[15px] text-lg font-semibold leading-[120%] tracking-[0%] text-[#F4F4F4] sm:px-10 md:px-16"
           disabled={isPending}
         >
           {isPending ? "Verifying..." : "Verify"}

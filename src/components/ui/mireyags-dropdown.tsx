@@ -35,14 +35,14 @@ const MireyagsDropdown = ({
         onValueChange(val); // ✅ no number conversion
       }}
     >
-      <SelectTrigger className="w-full h-[48px] px-3 bg-white shadow-[3px_4px_30px_0px_#0000001A] rounded-[12px] placeholder:text-[#A9A9A9] border-none">
+      <SelectTrigger className="h-[50px] w-full rounded-xl border border-white/30 bg-white px-4 text-black shadow-none outline-none data-[placeholder]:text-black/45 focus:ring-2 focus:ring-white/40">
         <SelectValue
-          className="placeholder:text-[#424242] placeholder:text-base placeholder:font-bold dark:text-black"
+          className="text-left text-base font-medium text-black data-[placeholder]:font-normal data-[placeholder]:text-black/45"
           placeholder={placeholderText ?? "Select"}
         />
       </SelectTrigger>
 
-      <SelectContent className="min-w-[unset] w-auto h-[250px] rounded-[8px] shadow-[0px_0px_56px_0px_#00000029] border-none bg-white mt-1">
+      <SelectContent className="mt-1 h-auto max-h-[250px] w-[var(--radix-select-trigger-width)] min-w-[var(--radix-select-trigger-width)] rounded-xl border border-black/15 bg-white p-1 text-black shadow-xl">
         <SelectGroup>
           {list
             .filter((item) => item.value !== "")
@@ -50,7 +50,7 @@ const MireyagsDropdown = ({
               <SelectItem
                 key={item.id}
                 value={item.value} // ✅ already string
-                className="text-[#0E2A5C] font-normal text-[16px] leading-normal cursor-pointer"
+                className="cursor-pointer rounded-lg px-3 py-2 text-base font-normal leading-normal text-black focus:bg-black focus:text-white data-[highlighted]:bg-black data-[highlighted]:text-white"
               >
                 {item.name}
               </SelectItem>
@@ -62,4 +62,3 @@ const MireyagsDropdown = ({
 };
 
 export default MireyagsDropdown;
-

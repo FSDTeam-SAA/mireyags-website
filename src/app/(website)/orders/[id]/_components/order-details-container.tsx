@@ -8,12 +8,13 @@ import Image from "next/image";
 import Link from "next/link";
 import moment from "moment";
 import ShareExperienceForm from "./share-your-exprience";
+import { OrdersSkeleton, QueryError } from "@/components/shared/AsyncStates";
 
 const OrderDetails = ({ orderId }: { orderId: string }) => {
   const { data: session } = useSession();
   const token = (session?.user as { accessToken?: string })?.accessToken;
 
-  const { data, isLoading, error, isError } = useQuery<SingleOrderApiResponse>({
+  const { data, isLoading, error, isError, refetch } = useQuery<SingleOrderApiResponse>({
     queryKey: ["single-order", orderId],
     queryFn: async () => {
       const res = await fetch(
@@ -37,6 +38,8 @@ const OrderDetails = ({ orderId }: { orderId: string }) => {
   console.log(order);
 
   console.log(isError, error, isLoading);
+  if (isLoading) return <div className="bg-black py-10"><OrdersSkeleton /></div>;
+  if (isError || !order) return <div className="bg-black px-4 py-10"><QueryError message="This order couldn't be loaded." onRetry={() => refetch()} /></div>;
   return (
     <div>
       <div className="py-10">
@@ -44,7 +47,7 @@ const OrderDetails = ({ orderId }: { orderId: string }) => {
           <div className="pb-2">
             <Link
               href="/orders"
-              className="text-lg md:text-xl font-semibold text-[#13279F] leading-normal underline"
+              className="text-lg md:text-xl font-semibold text-black leading-normal underline"
             >
               Back
             </Link>
@@ -88,7 +91,7 @@ const OrderDetails = ({ orderId }: { orderId: string }) => {
                     <p className="text-base font-normal text-[#8B8B8B] leading-normal">
                       Size : {info?.size}
                     </p>
-                    <h4 className="text-lg md:text-xl font-semibold text-[#171D98] leading-normal py-1">
+                    <h4 className="text-lg md:text-xl font-semibold text-black leading-normal py-1">
                       ${info?.offerPrice}{" "}
                       <del className="text-base font-normal text-[#666666]">
                         ${info?.price}

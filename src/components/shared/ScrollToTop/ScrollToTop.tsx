@@ -12,16 +12,16 @@ const ScrollToTopComponent = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          border: "2px solid #0078F0",
+          border: "2px solid #FFFFFF",
           background: "white",
           padding: "5px",
         }}
         smooth
         component={
           hoverIcon ? (
-            <ArrowUp className="w-[30px] h-[30px] text-primary" />
+          <ArrowUp className="w-[30px] h-[30px] text-black" />
           ) : (
-            <ChevronsUp  className="w-[30px] h-[30px] text-primary" />
+            <ChevronsUp  className="w-[30px] h-[30px] text-black" />
           )
         }
         onMouseEnter={()=>setHoverIcon(true)}

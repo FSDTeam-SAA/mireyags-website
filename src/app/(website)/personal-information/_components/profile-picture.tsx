@@ -15,7 +15,7 @@ const ProfilePicture = () => {
   const queryClient = new QueryClient();
 
   const [profileImage, setProfileImage] = useState(
-    "/assets/images/no-user.jpeg",
+    "/assets/images/no-user.jpg",
   );
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -89,14 +89,14 @@ const ProfilePicture = () => {
   };
 
   return (
-    <div className="flex justify-start items-center bg-white shadow-[0_4px_8px_rgba(0,0,0,0.12)] rounded-[8px] p-6">
-      <div className="flex items-center gap-6">
+    <div className="flex items-center justify-center rounded-[10px] bg-white p-4 shadow-[0_4px_8px_rgba(0,0,0,0.12)] sm:justify-start sm:p-6">
+      <div className="flex w-full flex-col items-center gap-4 sm:flex-row sm:gap-6">
         <div
           className="w-fit relative rounded-full border-4 border-[#F7F8F8] bg-[url('/path-to-image')] bg-cover bg-center bg-no-repeat shadow-[0_4px_15px_rgba(0,0,0,0.10)]
 "
         >
           <div className="relative">
-            <div className="w-32 h-32 rounded-full overflow-hidden border relative">
+            <div className="relative h-28 w-28 overflow-hidden rounded-full border sm:h-32 sm:w-32">
               <Image
                 src={profileImage}
                 alt="Profile"
@@ -129,9 +129,9 @@ const ProfilePicture = () => {
           </div>
         </div>
 
-        <div>
-          <h4 className="text-xl md:text-2xl font-semibold text-[#191919] leading-normal pb-1">{data?.data?.name || "N/A"}</h4>
-          <p className="text-base text-[#191919] font-normal leading-normal">{data?.data?.email || "N/A"}</p>
+        <div className="min-w-0 text-center sm:text-left">
+          <h4 className="break-words pb-1 text-xl font-semibold leading-normal text-[#191919] md:text-2xl">{data?.data?.name || "N/A"}</h4>
+          <p className="break-all text-sm font-normal leading-normal text-[#191919] sm:text-base">{data?.data?.email || "N/A"}</p>
         </div>
       </div>
     </div>

@@ -8,13 +8,14 @@ import { useSession } from "next-auth/react";
 import Image from "next/image";
 import moment from "moment";
 import Link from "next/link";
+import { EmptyState, OrdersSkeleton, QueryError } from "@/components/shared/AsyncStates";
 
 const OrderContainer = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const { data: session } = useSession();
   const token = (session?.user as { accessToken?: string })?.accessToken;
 
-  const { data, isLoading, error, isError } = useQuery<OrdersApiResponse>({
+  const { data, isLoading, error, isError, refetch } = useQuery<OrdersApiResponse>({
     queryKey: ["all-orders", currentPage],
     queryFn: async () => {
       const res = await fetch(
@@ -36,16 +37,18 @@ const OrderContainer = () => {
   console.log(orders);
 
   console.log(isError, error, isLoading);
+  if (isLoading) return <div className="bg-black py-10"><OrdersSkeleton /></div>;
+  if (isError) return <div className="bg-black px-4 py-10"><QueryError message="Your orders couldn't be loaded." onRetry={() => refetch()} /></div>;
   return (
     <div className="py-10">
       <div className="container bg-white border border-[#EBEBEB] shadow-[0px_2px_4px_0px_#00000040] rounded-[8px] p-4">
         <div className="pb-2">
-          <h2 className="text-lg md:text-xl font-semibold text-[#13279F] leading-normal">
+          <h2 className="text-lg md:text-xl font-semibold text-black leading-normal">
             Order
           </h2>
         </div>
         <div>
-          {orders?.map((item) => {
+          {orders?.length ? orders.map((item) => {
             return (
               <div
                 key={item?._id}
@@ -86,7 +89,7 @@ const OrderContainer = () => {
                         <p className="text-base font-normal text-[#8B8B8B] leading-normal">
                           Size : {info?.size}
                         </p>
-                        <h4 className="text-lg md:text-xl font-semibold text-[#171D98] leading-normal py-1">
+                        <h4 className="text-lg md:text-xl font-semibold text-black leading-normal py-1">
                           ${info?.offerPrice}{" "}
                           <del className="text-base font-normal text-[#666666]">
                             ${info?.price}
@@ -117,7 +120,7 @@ const OrderContainer = () => {
                 </div>
               </div>
             );
-          })}
+          }) : <EmptyState title="No orders yet" description="Your completed orders will appear here after you place an order." />}
         </div>
         {/* pagination  */}
         <div className="pt-4">
@@ -146,5 +149,3 @@ const OrderContainer = () => {
 };
 
 export default OrderContainer;
-
-

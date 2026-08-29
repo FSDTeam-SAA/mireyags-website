@@ -84,7 +84,7 @@ export default function ProductCard({
 
           <div
             className={cn(
-              "flex items-center gap-1.5 font-medium text-green-600",
+              "flex items-center gap-1.5 font-medium text-white/80",
               compact ? "mt-2 text-xs" : "mt-3 text-sm",
             )}
           >
@@ -135,7 +135,7 @@ export default function ProductCard({
                 })
               }
               className={cn(
-                "flex-1 rounded-md bg-sky-500 text-xs font-medium text-white hover:bg-sky-600",
+                "flex-1 rounded-md bg-white text-xs font-medium text-black hover:bg-white/80",
                 compact ? "h-8 text-[10px]" : "h-9",
               )}
             >

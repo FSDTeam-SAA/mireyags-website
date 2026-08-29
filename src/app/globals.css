@@ -9,11 +9,18 @@
 }
 
 body{
-  @apply bg-[#EDFBFF]
+  @apply overflow-x-hidden bg-black text-white
+}
+
+/* Keep every interactive button consistent across all pages, including
+   Button's asChild links and native/Radix buttons. */
+button,
+[data-slot="button"] {
+  border-radius: 10px !important;
 }
 
 .bg_color{
-  background-color: #F4FFF4
+  background-color: #000000
 }
 
 .h_underline {
@@ -34,32 +41,32 @@ body{
 
 @layer base {
   :root {
-    /* Primary Base (#00B6E0) */
-    --primary: 191 100% 44%;
+    /* Monochrome primary palette */
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
 
     /* Primary Shades */
-    --primary-light: 191 100% 55%;
-    --primary-lighter: 191 100% 70%;
-    --primary-dark: 191 100% 35%;
-    --primary-darker: 191 100% 25%;
+    --primary-light: 0 0% 20%;
+    --primary-lighter: 0 0% 35%;
+    --primary-dark: 0 0% 0%;
+    --primary-darker: 0 0% 0%;
 
     /* Hover & Ring */
-    --primary-hover: 191 100% 40%;
-    --ring: 191 100% 44%;
+    --primary-hover: 0 0% 20%;
+    --ring: 0 0% 0%;
   }
 
   .dark {
     /* Dark Mode */
-    --primary: 191 100% 50%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
 
-    --primary-light: 191 100% 60%;
-    --primary-lighter: 191 100% 75%;
-    --primary-dark: 191 100% 40%;
-    --primary-darker: 191 100% 30%;
+    --primary-light: 0 0% 20%;
+    --primary-lighter: 0 0% 35%;
+    --primary-dark: 0 0% 0%;
+    --primary-darker: 0 0% 0%;
 
-    --primary-hover: 191 100% 55%;
-    --ring: 191 100% 55%;
+    --primary-hover: 0 0% 20%;
+    --ring: 0 0% 0%;
   }
 }

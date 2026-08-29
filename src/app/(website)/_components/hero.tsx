@@ -49,7 +49,7 @@ export default function HeroSection() {
                 asChild
                 size="lg"
                 variant="outline"
-                className="h-12 rounded-[12px] border-primary bg-transparent text-primary px-8 text-base font-semibold hover:bg-white/90"
+                className="h-12 rounded-[12px] border-white bg-transparent text-white px-8 text-base font-semibold hover:bg-white/90 hover:text-black"
               >
                 <Link href="#">Learn More</Link>
               </Button> */}
@@ -60,7 +60,6 @@ export default function HeroSection() {
     </section>
   );
 }
-
 
 
 

@@ -9,7 +9,7 @@ interface Props {
 const NotFound = ({ message }: Props) => {
   return (
     <div className="">
-      <div className="bg-primary/10 h-[360px] w-full flex flex-col items-center justify-center rounded-[20px]">
+      <div className="flex h-[360px] w-full flex-col items-center justify-center rounded-[20px] border border-white/15 bg-black text-white">
         {/* Image */}
         <Image
           src="/images/404.png"
@@ -20,7 +20,7 @@ const NotFound = ({ message }: Props) => {
         />
 
         {/* Text Animation applied to message string only */}
-        <p className="text-lg font-bold text-gradient text-center w-1/2">
+        <p className="text-center text-lg font-bold text-white">
           <TextAnimate animation="slideUp" by="word">
             {message}
           </TextAnimate>

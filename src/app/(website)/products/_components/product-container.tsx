@@ -10,6 +10,7 @@ import MireyagsDropdown from "@/components/ui/mireyags-dropdown";
 import { CategoriesApiResponse } from "@/components/types/category-data-type";
 import { BrandsApiResponse } from "@/components/types/brands-data-type";
 import MireyagsPagination from "@/components/ui/mireyags-pagination";
+import { ProductGridSkeleton, QueryError } from "@/components/shared/AsyncStates";
 
 export default function ProductsContainer() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +19,7 @@ export default function ProductsContainer() {
   const [category, setCategory] = useState<string | undefined>("");
   const [brand, setBrand] = useState<string | undefined>("");
 
-  const { data, isLoading, error, isError } = useQuery<AllProductsApiResponse>({
+  const { data, isLoading, error, isError, refetch } = useQuery<AllProductsApiResponse>({
     queryKey: ["all-products", currentPage, debouncedSearch, category, brand],
     queryFn: async () => {
       const res = await fetch(
@@ -74,25 +75,29 @@ export default function ProductsContainer() {
   })) ?? [];
 
   return (
-    <main className="min-h-screen bg-[#eaf4f7] py-10 md:py-14">
+    <main className="min-h-screen bg-black py-10 text-white md:py-14">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-3xl">
-          <h1 className="text-2xl font-bold tracking-tight text-slate-900 md:text-4xl">
+          <h1 className="text-2xl font-bold tracking-tight text-white md:text-4xl">
             Research Products
           </h1>
-          <p className="mt-2 text-sm text-slate-500 md:text-base">
+          <p className="mt-2 text-sm text-white/60 md:text-base">
             Browse our premium catalog of research peptides and compounds.
           </p>
         </div>
 
         {/* search and filter dropdown  */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 pt-6">
           {/* search  */}
           <div>
+            <label htmlFor="product-search" className="mb-2 block text-sm font-medium text-white">
+              Search products
+            </label>
             <Input
+              id="product-search"
               type="search"
-              className="w-full h-[48px] px-3 bg-white shadow-[3px_4px_30px_0px_#0000001A] rounded-[12px] placeholder:text-[#A9A9A9] border-none"
+              className="h-[50px] w-full rounded-xl border border-white/30 bg-white px-4 text-black shadow-none outline-none placeholder:text-black/45 focus-visible:border-white focus-visible:ring-2 focus-visible:ring-white/40"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search"
@@ -100,6 +105,9 @@ export default function ProductsContainer() {
           </div>
           {/* category dropdown  */}
           <div className="w-full">
+            <label className="mb-2 block text-sm font-medium text-white">
+              Filter by category
+            </label>
             <MireyagsDropdown
               list={categories}
               selectedValue={category}
@@ -111,6 +119,9 @@ export default function ProductsContainer() {
           </div>
           {/* brands dropdown */}
           <div>
+            <label className="mb-2 block text-sm font-medium text-white">
+              Filter by brand
+            </label>
             <MireyagsDropdown
               list={brands}
               selectedValue={brand}
@@ -124,23 +135,29 @@ export default function ProductsContainer() {
 
         {/* Results */}
         <div className="mt-6">
-          <p className="text-sm text-slate-600">
+            <p className="text-sm text-white/60">
             Showing {products?.data?.length} products
           </p>
         </div>
 
         {/* Product Grid */}
-        <div className="mt-5 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
-          {products?.data?.map((product) => (
-            <ProductCard key={product._id} product={product} />
-          ))}
+        <div className="mt-5">
+          {isLoading ? <ProductGridSkeleton count={8} /> : isError ? (
+            <QueryError message="Products are temporarily unavailable. Please try again." onRetry={() => refetch()} />
+          ) : products?.data?.length ? (
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
+              {products.data.map((product) => <ProductCard key={product._id} product={product} />)}
+            </div>
+          ) : (
+            <div className="rounded-xl border border-white/15 bg-white/5 px-6 py-12 text-center text-white/70">No products found. Try a different search or filter.</div>
+          )}
         </div>
 
          {/* pagination  */}
         {
           data && data?.data && data?.data?.pagination && data?.data?.pagination?.totalPages > 1 && (
             <div className="w-full flex items-center justify-between py-2">
-              <p className="text-base font-normal text-[#68706A] leading-[150%]">
+              <p className="text-base font-normal text-white/60 leading-[150%]">
                 Showing {currentPage} to 8 of {data?.data?.pagination?.totalData} results
               </p>
               <div>

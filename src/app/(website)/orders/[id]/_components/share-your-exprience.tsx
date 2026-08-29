@@ -90,7 +90,7 @@ export default function ShareExperienceForm({productId}:{productId?:string}) {
 
   return (
     <div className="container bg-white border border-[#EBEBEB] shadow-[0px_2px_4px_0px_#00000040] rounded-[8px] p-4">
-      <h4 className="text-lg md:text-xl font-semibold text-[#13279F] leading-normal">
+      <h4 className="text-lg md:text-xl font-semibold text-black leading-normal">
           Write Review and Rating
         </h4>
       <div>

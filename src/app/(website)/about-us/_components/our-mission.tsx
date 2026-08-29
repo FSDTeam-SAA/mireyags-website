@@ -17,18 +17,18 @@ export default function OurMissionSection() {
           </div>
 
           <div className="max-w-[520px]">
-            <h2 className="text-3xl font-bold text-slate-900 md:text-[44px]">
+            <h2 className="text-3xl font-bold text-white md:text-[44px]">
               Our Mission
             </h2>
 
-            <p className="mt-4 text-sm leading-7 text-slate-700">
+            <p className="mt-4 text-sm leading-7 text-white/70">
               Research Peptides is dedicated to providing the highest quality
               research peptides to the scientific community. Our products
               undergo rigorous testing and quality control to ensure you receive
               only the best materials for your research.
             </p>
 
-            <p className="mt-4 text-sm leading-7 text-slate-700">
+            <p className="mt-4 text-sm leading-7 text-white/70">
               With years of experience in peptide synthesis and a commitment to
               customer satisfaction, we&apos;re your trusted partner in
               scientific discovery.
